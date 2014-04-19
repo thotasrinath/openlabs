@@ -26,6 +26,7 @@ public class JpaConfiguration {
 		Map<String, Object> props = new HashMap<String, Object>();
 		props.put("hibernate.dialect", MySQL5Dialect.class.getName());
 		props.put("hibernate.cache.provider_class", HashtableCacheProvider.class.getName());
+		props.put("hibernate.hbm2ddl.auto", "create-drop");
 		return props;
 	}
 
