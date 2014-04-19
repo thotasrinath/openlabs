@@ -1,4 +1,4 @@
-package org.openlabs.ilearn;
+package org.openlabs.ilearn.config;
 
 import java.util.HashMap;
 import java.util.Map;

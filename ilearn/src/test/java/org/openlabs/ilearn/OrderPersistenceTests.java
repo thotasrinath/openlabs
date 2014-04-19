@@ -8,6 +8,11 @@ import javax.persistence.PersistenceContext;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.openlabs.ilearn.database.entity.Item;
+import org.openlabs.ilearn.database.entity.Order;
+import org.openlabs.ilearn.database.repository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +23,9 @@ public class OrderPersistenceTests {
 
 	@PersistenceContext
 	private EntityManager entityManager;
+	
+	@Autowired
+	private OrderRepository orderRepository;
 
 	@Test
 	@Transactional
@@ -28,9 +36,19 @@ public class OrderPersistenceTests {
 		entityManager.flush();
 		assertNotNull(order.getId());
 	}
+	
+	@Test
+	@Transactional
+	public void testSaveOrderRepo() throws Exception {
+		Order order = new Order();
+		order.getItems().add(new Item());
+		orderRepository.save(order);
+		assertNotNull(order.getId());
+	}
 
 	@Test
 	@Transactional
+	@Rollback(false)
 	public void testSaveAndGet() throws Exception {
 		Order order = new Order();
 		order.getItems().add(new Item());

@@ -6,8 +6,8 @@
 
 	<persistence-unit name="application" transaction-type="RESOURCE_LOCAL">
 
-        <class>org.openlabs.ilearn.Item</class>
-        <class>org.openlabs.ilearn.Order</class>
+        <class>org.openlabs.ilearn.database.entity.Item</class>
+        <class>org.openlabs.ilearn.database.entity.Order</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 	</persistence-unit>

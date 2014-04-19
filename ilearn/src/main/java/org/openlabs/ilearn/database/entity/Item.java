@@ -1,5 +1,5 @@
 
-package org.openlabs.ilearn;
+package org.openlabs.ilearn.database.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

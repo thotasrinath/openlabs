@@ -1,4 +1,4 @@
-package org.openlabs.ilearn;
+package org.openlabs.ilearn.database.entity;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;

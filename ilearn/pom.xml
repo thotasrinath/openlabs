@@ -14,7 +14,7 @@
 	</description>
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
-		<spring.framework.version>3.0.6.RELEASE</spring.framework.version>
+		<spring.framework.version>4.0.3.RELEASE</spring.framework.version>
 	</properties>
 
 	<dependencies>
@@ -81,6 +81,12 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.5.1.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
