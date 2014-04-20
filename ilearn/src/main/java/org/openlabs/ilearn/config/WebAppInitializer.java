@@ -18,7 +18,7 @@ public class WebAppInitializer extends
 
     @Override
     protected String[] getServletMappings() {
-        return new String[]{"/ilearn-rest/*"};
+        return new String[]{"/rest/*"};
     }
 	
 
