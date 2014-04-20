@@ -8,18 +8,25 @@ import org.hibernate.dialect.MySQL5Dialect;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 
 @Configuration
-public class JpaConfiguration {
-
+@ImportResource( { "classpath:META-INF/spring/app-context.xml" } )
+@EnableJpaRepositories
+@EnableTransactionManagement
+public class AppConfiguration {
+	
 	@Value("#{dataSource}")
-	private javax.sql.DataSource dataSource;
+	public javax.sql.DataSource dataSource;
 
 	@Bean
 	public Map<String, Object> jpaProperties() {
@@ -33,7 +40,7 @@ public class JpaConfiguration {
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
-		hibernateJpaVendorAdapter.setShowSql(false);
+		hibernateJpaVendorAdapter.setShowSql(true);
 		hibernateJpaVendorAdapter.setGenerateDdl(true);
 		hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
 		return hibernateJpaVendorAdapter;
@@ -52,5 +59,5 @@ public class JpaConfiguration {
 		lef.setJpaVendorAdapter(this.jpaVendorAdapter());
 		return lef;
 	}
-
+	
 }
