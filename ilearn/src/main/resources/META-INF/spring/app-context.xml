@@ -24,7 +24,7 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<context:component-scan base-package="org.openlabs.ilearn" />
-	
-	<jpa:repositories base-package="org.openlabs.ilearn.database.repository"/>
+
+	<jpa:repositories base-package="org.openlabs.ilearn.database.repository" />
 
 </beans>

@@ -5,5 +5,6 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestMvcConfiguratio
 
 @Configuration
 public class WebConfiguration extends RepositoryRestMvcConfiguration {
+	
 
 }

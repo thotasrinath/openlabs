@@ -6,7 +6,6 @@
 	<groupId>org.openlabs.ilearn</groupId>
 	<artifactId>ilearn</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>ilearn</name>
 	<url>http://www.springframework.org</url>
 	<description>
@@ -166,11 +165,7 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.0.4.v20130625</version>
-			</plugin>
+		
 		</plugins>
 
 	</build>
